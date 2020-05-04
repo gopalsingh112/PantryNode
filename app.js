@@ -55,7 +55,6 @@ app.use(passport.session());
 app.use('/', indexRouter);
 app.get('/home', indexRouter);
 app.use('/users', usersRouter);
-app.use('/profile', usersRouter);
 app.post('/sign_up',usersRouter); 
 app.get('/register',usersRouter); 
 app.post('/login',usersRouter); 
