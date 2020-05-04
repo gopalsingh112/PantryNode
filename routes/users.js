@@ -26,6 +26,13 @@ router.get('/profile', function(req, res, next) {
     }
 });
 
+router.get('/sale', function(req, res, next) {
+    if (!req.isAuthenticated()) {
+        res.render('login', { errors });
+    } else {
+        res.redirect('/sale');
+    }
+});
 
   
 

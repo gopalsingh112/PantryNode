@@ -34,6 +34,17 @@ router.get('/profile', ensureAuthenticated, function(req, res) {
     }
 });
 
+router.get('/sale', ensureAuthenticated, function(req, res) {
+    if (!req.isAuthenticated()) {
+        let errors = [];
+        res.redirect('index', { errors });
+    } else {
+        res.render('sale', {
+            name: req.user.name
+        })
+    }
+});
+
 
 
 
