@@ -17,6 +17,18 @@ router.get('/register', function(req, res, next) {
     }
 });
 
+
+router.get('/profile', function(req, res, next) {
+    if (!req.isAuthenticated()) {
+        res.render('login', { errors });
+    } else {
+        res.redirect('/profile');
+    }
+});
+
+
+  
+
 router.post('/sign_up', function(req, res) {
     const { name, email, password, phone } = req.body;
 
